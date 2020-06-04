@@ -1,0 +1,11 @@
+#ifndef __BIT_H__
+#define __BIT_H__
+
+unsigned char SetBit(unsigned char pin, unsigned char number, unsigned char bin_value){
+	return (bin_value ? pin | (0x01 << number) : pin & ~(0x01 << number));
+}
+
+unsigned char GetBit(unsigned char port, unsigned char number){
+	return ( port & (0x01 << number) );
+}
+#endif
